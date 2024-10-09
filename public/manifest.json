@@ -1,0 +1,30 @@
+{
+  "short_name": "auth-demo",
+  "name": "Auth Demo",
+  "icons": [    
+    {
+      "src": "favicon-16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "favicon-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "favicon-main.png",
+      "type": "image/png",
+      "sizes": "1100x1100"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1f1f1f",
+  "background_color": "#000000"
+}

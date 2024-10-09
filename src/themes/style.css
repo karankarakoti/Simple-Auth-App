@@ -1,0 +1,79 @@
+/* do not increment number inpur on scroll */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-autocomplete-end-adornment > .MuiAutocomplete-endAdornment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  top: 3px
+}
+
+.input-container {
+  position: relative;  
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px !important;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 4px !important;
+  transition: border-color 0.2s ease-in-out;
+  background-color: white !important;  
+}
+
+.input-field:disabled {
+  background-color: #f5f5f5 !important;
+  cursor: not-allowed;
+}
+
+.input-field--focused {
+  border-color: #1890ff !important;
+}
+
+.input-label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  padding: 0 5px;
+  font-size: 14px;
+  color: #999;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.input-label--textarea {
+  top: 25px !important;    
+}
+
+.input-label--focused {
+  top: 0 !important;
+  left: 0 !important;
+  transform: translate(10px, -50%);
+  font-size: 12px;
+  color: #1890ff !important;    
+  background-color: white !important;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 5mm;
+  }
+
+  body {
+    print-color-adjust: exact;
+  }
+
+  .print-container {
+    width: 210mm;
+    height: auto; /* Adjust height to auto for content to expand */
+    margin: auto;
+    overflow: visible !important; /* Ensure no scrollbar appears */
+  }
+}
