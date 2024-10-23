@@ -19,3 +19,56 @@ model User {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
 }
+
+model DaltinStudent {
+  id                          String             @id @default(uuid())
+  title                       String?            @db.VarChar(255)
+  firstName                   String             @db.VarChar(255)
+  middleName                  String?            @db.VarChar(255)
+  lastName                    String?            @db.VarChar(255)
+  mobile                      String             @db.VarChar(255)
+  emergencyContact            String?            @db.VarChar(255)
+  email                       String             @db.VarChar(255)
+  martialStatus               String?            @db.VarChar(255)
+  gender                      String?            @db.VarChar(255)
+  dob                         DateTime?
+  city                        String?            @db.VarChar(255)
+  state                       String?            @db.VarChar(255)
+  country                     String?            @db.VarChar(255)
+  pincode                     String?            @db.VarChar(255)
+  passportNumber              String?            @db.VarChar(255)
+  passportExpiry              DateTime?
+  intrerestedCountry          String?            @db.VarChar(255)
+  englishProficiencyTest      Boolean            @default(false)
+  englishProficiencyTestScore Int?
+  visaRejected                Boolean            @default(false)
+  gapInEducation              Boolean            @default(false)
+  createdAt                   DateTime           @default(now())
+  updatedAt                   DateTime?          @updatedAt
+  Education                   StudentEducation[]
+  Documents                   StudentDocument[]
+}
+
+model StudentEducation {
+  id            String        @id @default(uuid())
+  studentId     String
+  Student       DaltinStudent @relation(fields: [studentId], references: [id])
+  qualification String        @db.VarChar(255)
+  university    String        @db.VarChar(255)
+  percentage    Int
+  passingYear   Int
+  country       String        @db.VarChar(255)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime?     @updatedAt
+}
+
+model StudentDocument {
+  id        String        @id @default(uuid())
+  studentId String
+  Student   DaltinStudent @relation(fields: [studentId], references: [id])
+  label     String        @db.VarChar(255)
+  value     String        @db.VarChar(255)
+  url       String        @db.VarChar(255)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime?     @updatedAt
+}
