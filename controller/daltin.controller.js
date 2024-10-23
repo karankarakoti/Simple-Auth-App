@@ -77,11 +77,11 @@ const register = catchAsyncErrors(async (req, res, next) => {
         buttons: [
           {
             label: "View Application",
-            url: `${process.env.FRONTEND_URL}/register/${student.id}`
+            url: `${process.env.DALTIN_FRONTEND_URL}/register/${student.id}`
           }          
         ],
         notWorkingLabel: "If the button above is not working, please click on the link below to view your application.",
-        notWorkingUrl: `${process.env.FRONTEND_URL}/register/${student.id}`
+        notWorkingUrl: `${process.env.DALTIN_FRONTEND_URL}/register/${student.id}`
       },
       async (err, data) => {
         if (err) {
